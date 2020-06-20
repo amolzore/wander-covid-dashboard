@@ -1,0 +1,52 @@
+<mat-divider></mat-divider>
+<div>
+    <select class='select-option' #country (change)='onOptionsSelected(country.value)' name="country">
+        <option class='option' 
+        *ngFor='let countryData of countries' 
+        [selected]="countryData.Slug === defaultCountry"
+        [value]="countryData.Slug">{{countryData.Country}}</option>
+        <!-- <option value="india" selected>INDIA</option>
+        <option value="guyana">Guyana</option>
+        <option value="indonesia">Indonesia</option> -->
+      </select>
+</div>
+<mat-divider></mat-divider>
+<div>
+    <highcharts-chart 
+    [Highcharts]="Highcharts"
+    [options]="chartOptions"
+    style="width: 100%; height: 400px; display: block;"></highcharts-chart>
+</div>
+<mat-divider></mat-divider>
+<!-- <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards"> 
+    <mat-card fxFlex="25">
+        <div><highcharts-chart 
+            [Highcharts]="Highcharts"
+            [options]="chartOptions1"
+            style="width: 100%; height: 400px; display: block;"></highcharts-chart>
+        </div>
+    </mat-card>
+    <mat-card fxFlex="25">
+        <div><highcharts-chart 
+            [Highcharts]="Highcharts"
+            [options]="chartOptions1"
+            style="width: 100%; height: 400px; display: block;"></highcharts-chart></div>
+    </mat-card>
+    <mat-card fxFlex="25">
+        <div><highcharts-chart 
+            [Highcharts]="Highcharts"
+            [options]="chartOptions1"
+            style="width: 100%; height: 400px; display: block;"></highcharts-chart></div>
+    </mat-card>
+    <mat-card fxFlex="25">
+        <div><highcharts-chart 
+            [Highcharts]="Highcharts"
+            [options]="chartOptions1"
+            style="width: 100%; height: 400px; display: block;"></highcharts-chart></div>
+    </mat-card>
+</div> -->
+<mat-divider></mat-divider>
+<div>
+    <div>Table</div>
+    <div>Pei Chart</div>
+</div>
