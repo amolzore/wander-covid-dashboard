@@ -1,0 +1,44 @@
+    <table class="table">
+      <thead>
+        <tr>
+            <th scope="col">NewConfirmed</th>
+            <th scope="col">TotalConfirmed</th>
+            <th scope="col">NewDeaths</th>
+            <th scope="col">TotalDeaths</th>
+            <th scope="col">NewRecovered</th>
+            <th scope="col">TotalRecovered</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>{{globalSummary.NewConfirmed | number}}</td>
+              <td>{{globalSummary.TotalConfirmed | number}}</td>
+              <td>{{globalSummary.NewDeaths | number}}</td>
+              <td>{{globalSummary.TotalDeaths | number}}</td>
+              <td>{{globalSummary.NewRecovered | number}}</td>
+              <td>{{globalSummary.TotalRecovered | number}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div>
+    <highcharts-chart 
+    [Highcharts]="Highcharts"
+    [options]="summaryChartOptions"
+    style="width: 100%; height: 400px; display: block;"></highcharts-chart>
+</div>
+<mat-divider></mat-divider>
+<div>
+    <select class='select-option' #country (change)='onOptionsSelected(country.value)' name="country">
+        <option class='option' 
+        *ngFor='let countryData of countries' 
+        [selected]="countryData.Slug === defaultCountry"
+        [value]="countryData.Slug">{{countryData.Country}}</option>
+    </select>
+</div>
+<div>
+    <highcharts-chart 
+    [Highcharts]="Highcharts"
+    [options]="dayOneTotalChartOptions"
+    style="width: 100%; height: 400px; display: block;"></highcharts-chart>
+</div>

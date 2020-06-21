@@ -1,2 +1,1 @@
-
 Wander Covid Dashboard
